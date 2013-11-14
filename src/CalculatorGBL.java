@@ -1,8 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class CalculatorGBL {
+public class CalculatorGBL extends JApplet{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
+	 * 
+	 */
 	private JPanel windowContent;
 	private JTextField displayField, emptyField;
 	private JButton buttonBS, buttonCE, buttonC;
@@ -11,7 +18,7 @@ public class CalculatorGBL {
 	private JButton msButton, button1, button2, button3, buttonSubtract, buttonDX;
 	private JButton mplusButton, button0, buttonSign, buttonPoint, buttonAdd, buttonEqual;
 	
-	CalculatorGBL()
+	public void init()
 	{
 		windowContent = new JPanel();
 		GridBagLayout gb = new GridBagLayout();
@@ -443,11 +450,13 @@ public class CalculatorGBL {
 		buttonEqual = new JButton("=");
 		buttonEqual.addActionListener(calcEngine);
 		gb.setConstraints(buttonEqual, constr);
-		windowContent.add(buttonEqual);	
-		JFrame frame = new JFrame("Calculator");
-		frame.setContentPane(windowContent);
-		frame.pack();
-		frame.setVisible(true);
+		windowContent.add(buttonEqual);
+		add(windowContent);
+		
+//		JFrame frame = new JFrame("Calculator");
+//		frame.setContentPane(windowContent);
+//		frame.pack();
+//		frame.setVisible(true);
 	}
 	
 	public void setDisplayValue(String val){
